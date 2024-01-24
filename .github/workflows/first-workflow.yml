@@ -6,8 +6,8 @@ on:
     types: [opened]
 
 env: 
-  text: 'Ready for prod--ship it!'
-
+ DAY_OF_WEEK: Wednesday
+ 
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -26,5 +26,5 @@ jobs:
     - name: Cowsays
       uses: mscoutermarsh/cowsays-action@master
       with:
-        text: ${{ env . text }}
+        text: 'Ready for prod--ship it! $DAY_OF_WEEK'
         color: 'magenta'
