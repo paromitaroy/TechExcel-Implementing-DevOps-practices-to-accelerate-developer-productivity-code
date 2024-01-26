@@ -1,6 +1,6 @@
 version: v0.1
 testName: mpnploadtest
-testPlan: test/loadtestscript.jmx
+testPlan: loadtestscript.jmx
 description: 'CI/CD Test Run for MP&P load test'
 engineInstances: 1
 failureCriteria:
