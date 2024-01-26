@@ -9,14 +9,13 @@ on:
         - test
         - prod
 
-permissions:
-  id-token: write # This is required for requesting the JWT
-  contents: read  # This is required for actions/checkout
-
 name: Azure Bicep-Advanced
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write # This is required for requesting the JWT
+      contents: read  # This is required for actions/checkout
     steps:
     # Checkout code
     - uses: actions/checkout@main
@@ -28,7 +27,7 @@ jobs:
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: true
-  
+    
 
       # Deploy ARM template
     - name: Run ARM deploy
